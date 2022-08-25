@@ -31,7 +31,7 @@ export default function App() {
   const handleCheck = (checkedTodo) => {
     let incompleteTodos = todos.filter((todo) => todo.id !== checkedTodo.id);
     let completeTodos = [...completedTodos];
-    completeTodos.push(checkedTodo);
+    completeTodos = [...completeTodos, checkedTodo];
     completeTodos.sort((a, b) => a.name > b.name);
     setTodos(incompleteTodos);
     setCompletedTodos(completeTodos);
